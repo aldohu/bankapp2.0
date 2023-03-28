@@ -23,6 +23,8 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: scroll-behavior 5.5s ease;
 }
 
 body {
