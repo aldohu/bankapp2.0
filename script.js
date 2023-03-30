@@ -109,3 +109,17 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 });
 
 headerObserver.observe(header);
+//revail sections
+const allSections = document.querySelectorAll('.section');
+const revailSection = function (entries, observer) {
+  const [entry] = entries;
+  entry.target.classList.remove('section--hidden');
+};
+const sectionObserver = new IntersectionObserver(revailSection, {
+  root: null,
+  threshold: 0.1,
+});
+allSections.forEach(section => {
+  sectionObserver.observe(section);
+  section.classList.add('section--hidden');
+});
